@@ -1,0 +1,3 @@
+this is simple..only clone the repo and move the .vimrc file to
+your home directory...
+
