@@ -1,0 +1,10 @@
+*bundles* *bundles.txt*            Installed Bundles
+
+
+Lists the currently installed bundles. Also see the |bundle-log|.
+Last updated by vim-update-bundles on Sun Oct  5 00:42:09 VET 2014.
+
+  PLUGIN                           VERSION                RELEASE DATE
+------------------------------------------------------------------------
+  |neco-ghc|                       a66208e3c4bb4          2014-08-19
+

@@ -1,0 +1,68 @@
+*bundle-log.txt*                   Bundle Install Log
+
+
+Logs bundle install activity. Also see the list of installed |bundles|.
+
+Sun Oct  5 00:38:54 VET 2014 by vim-update-bundles 0.8
+ Aborted: 'git clone -q https://github.com/vim-scripts/neco-hc.git neco-hc' in /home/yo/.vim/bundle exited with code 128
+
+Sun Oct  5 00:40:54 VET 2014 by vim-update-bundles 0.8
+ Aborted: 'git clone -q https://github.com/eagletmt/neco-hc.git neco-hc' in /home/yo/.vim/bundle exited with code 128
+
+Sun Oct  5 00:42:09 VET 2014 by vim-update-bundles 0.8
+ Del |ghcmod-vim|               v1.2.0-14-g0c4e942
+ Del |untitled folder|
+ Del |neocomplete.vim|          ver.1.1-94-gbdf5c4e
+ Del |racer|                    ecde206153767
+ Del |csslint.vim|              v0.2-3-gf33a7ed
+ Del |vim-airline|              v0.6-144-g4dab934
+ Del |vim-l9|
+ Del |ultisnips|                3.0-104-g8aeb1a2
+ Del |YouCompleteMe|            a2cae90f7ba17
+ Del |3167301|                  5d8efe3facd6a
+ Del |vim-gtfo|                 1.1.1-28-ga4203d7
+ Del |sparkup|                  245f2009c8ab6
+ Del |rainbow_parentheses.vim|  eb8baa5428bde
+ Del |forms|                    b601e03fe0a3b
+ Del |vim-snippets|             1.0.0-188-ga811b75
+ Del |flatlandia|               05069c3777c46
+ Del |vim-easymotion|           2.0-211-g44499ba
+ Del |ensime|                   v2.10.0-0.9.8.8-299-gc59f959
+ Del |vim-indent-guides|        1.6-24-geec1b62
+ Del |vimproc.vim|              ver.7.1-142-g3ea27b7
+ Del |colorstepper|             a39875454b866
+ Del |rust.vim|                 a1b3b37a76758
+ Del |vim-scala|                80a16cf8dc9ee
+ Del |tern_for_vim|             0.5.0-2-g81f94f8
+ Del |plugin|
+ Del |vim-move|                 v1.3
+ Del |256840|                   a90be159066df
+ Del |self|                     2ed666b547edd
+ Del |vimshell|                 ver.9.2-239-g2c319d3
+ Del |auto-pairs|               v1.3.1-9-gc2f60ca
+ Del |indentLine|               bdad4e2ee6b1e
+ Del |vimside|                  d06ed9c82736d
+ Del |ctrlp.vim|                1.79-27-gb5d3fe6
+ Del |syntastic|                3.5.0-21-gd751d17
+ Del |vim-surround|             v2.0-8-gfa433e0
+ Del |vimproc|                  ver.7.1-142-g3ea27b7
+ Del |vim-javascript-syntax|    0.8.0-17-g1c0ea24
+ Del |bundle|
+ Del |doc|
+ Del |colorpicker|              3fd7cf0365c21
+ Del |csapprox|                 4.00-5-g7981dac
+ Del |ns9tks-vim-autocomplpop-13fe3d806464|
+ Del |MatchTagAlways|           ca74f05648ee6
+ Del |nerdtree|                 4.2.0-187-g4f1e6ec
+ Del |vim-json|                 427d9700ac2bf
+ Del |vim-expand-region|        v1.2-2-g9665135
+ Del |vim-howdoi|               479a6076e3983
+ Del |vim-multiple-cursors|     v2.2-5-g35028be
+ Del |autoload|
+ Del |emmet-vim|                emmet-265-g920904c
+ Del |unite.vim|                ver.6.0-360-geaa9a15
+ Del |bufexplorer-7.4.2|
+ Del |taglist_46|
+ Del |vim-sensible|             v1.1-2-g64aa12b
+   54 bundles removed
+
