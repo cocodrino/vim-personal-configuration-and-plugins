@@ -124,7 +124,7 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-set t_Co=256
+"set t_Co=256
 
 
 set copyindent
@@ -244,13 +244,13 @@ set number
 "colorscheme SB_peacock
 set clipboard+=unnamed
 
-set smartindent
-set tabstop=3
-set shiftwidth=3
-set expandtab
-set expandtab ts=3 sw=3 ai
-vnoremap <C-c> "*y
-vnoremap <C-p> "*p
+" set smartindent
+" set tabstop=3
+" set shiftwidth=3
+" set expandtab
+" set expandtab ts=3 sw=3 ai
+vnoremap <C-c>  "+y
+vnoremap <C-p>  "+gP
 
 nmap oo o<Esc>k
 
@@ -261,7 +261,8 @@ nmap oo o<Esc>k
 
 
 "set guifont=Source\ Code\ Pro\ 8
-set guifont=Monaco\ 7.2
+"set guifont=Monaco\ 8.2
+set guifont=Monaco\ 8
 "set guifont=Liberation\ Mono\ 9
 :set linespace=0
 
@@ -274,40 +275,6 @@ nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 :inoremap <Leader>v <C-w>v
 :inoremap <Leader>h <C-w>s
 "commands no well tested yet
-"
-"REVISAR ----------------------------------------------------------------
-"---------------------------------------------------
-"function! g:smart_tab()
-"  if (matchstr(getline("."), '^\s*#') != "") || (matchstr(getline("."), '^\s*\.') != "")
-"    call emmet#expandAbbr(3, "")
-"    return "\<esc>cit\<cr>\<esc>O"
-"  else
-"    call UltiSnips#ExpandSnippet()
-"    if g:ulti_expand_res == 0
-"      if pumvisible()
-"        return "\<C-n>"
-"      else
-"        call UltiSnips#JumpForwards()
-"        if g:ulti_jump_forwards_res == 0
-"          return "\<tab>"
-"        endif
-"      endif
-"    endif
-"    return ""
-"  endif
-"endfunction
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:smart_tab()<cr>"
-
-
-"let g:UltiSnipsExpandTrigger="<m-1>"
-"let g:UltiSnipsJumpForwardTrigger="<m-,>"
-"let g:UltiSnipsJumpBackwardTrigger="<m-.>"
-
-"------------------------------------------------------
-"---------------------------------------------
-
-
 
 :nnoremap ` '
 
@@ -389,10 +356,19 @@ set smartcase
 set ruler
 
 if has("gui_running")
+    set t_Co=256
     set background=dark
-   colorscheme solarflare
+    syntax on
+   "colorscheme SB_peacocks-in-space
+   colorscheme solarized
 else
-   colorscheme solarflare
+
+    set background=dark
+    "set t_Co=256
+    let g:solarized_termtrans = 1
+    " solarized options
+    "colorscheme solarized
+     colorscheme solarized
 endif
 "-----------------------------------------------hasta aca config copiada de
 "pagina
@@ -400,12 +376,12 @@ endif
 
 "------------------------------------------autoComp when save
 
-function LessToCss()
-  let current_file = shellescape(expand('%:p'))
-  let filename = shellescape(expand('%:r'))
-  let command = "silent !lessc " . current_file . " " . filename . ".css"
-  execute command
-endfunction
+" function LessToCss()
+"   let current_file = shellescape(expand('%:p'))
+"   let filename = shellescape(expand('%:r'))
+"   let command = "silent !lessc " . current_file . " " . filename . ".css"
+"   execute command
+" endfunction
 "autocmd BufWritePost,FileWritePost *.less call LessToCss()
 autocmd BufWritePost,FileWritePost *.coffee silent !coffee -c <afile>
 autocmd BufWritePost,FileWritePost *.less silent !lessc <afile> <afile>:r.css
@@ -419,10 +395,32 @@ autocmd filetype rust nnoremap <F4> :w <bar> exec '!rustc '.shellescape('%').' -
 
 "__________________________________________AUTOCOMP
 
+let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+" Use airline!!!
+let g:airline_enable_branch=1
+let g:airline_enable_syntastic=1
+let g:airline_detect_paste=1
+let g:airline_powerline_fonts=1
+let g:airline_theme="powerlineish"
+
+:inoremap <c-v> <Esc>v
+:vnoremap <c-S-v> <c-v>
+:vnoremap <c-v> "+gP
 
 
+"let g:airline_powerline_fonts = 1
 
+"vmap <Space><Plug>(EasyAlign)
 
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+"nmap <Leader>a <Plug>(EasyAlign)
+filetype plugin on
+filetype indent on
 
 
 
