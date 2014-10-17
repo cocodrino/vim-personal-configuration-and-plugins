@@ -12,10 +12,31 @@
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
 :imap <c-s> <Esc><c-s>
-setlocal omnifunc=necoghc#omnifunc
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
-let g:necoghc_enable_detailed_browse = 1
-let $PATH = $PATH . ':' . expand("~/.cabal/bin")
+"setlocal omnifunc=necoghc#omnifunc
+
+"let $PATH = $PATH . ':' . expand("~/.cabal/bin")
+"let g:ycm_semantic_triggers = {'haskell' : ['.']}
+"let g:necoghc_enable_detailed_browse = 1
+
+
+" You may already have the following two on, please check
+syntax on
+filetype plugin on
+
+" This assumes that ghc is in your path, if it is not, or you
+" wish to use a specific version of ghc, then please change
+" the ghc below to a full path to the correct one
+au BufEnter *.hs compiler ghc
+
+" For this section both of these should be set to your
+" browser and ghc of choice, I used the following
+" two vim lines to get those paths:
+" :r!which google-chrome
+" :r!which ghc
+
+let g:haddock_browser = "/usr/bin/google-chrome-stable"
+let g:ghc = "/usr/local/bin/ghc"
+
 
 "set g:bl_no_mappings
 let g:syntastic_css_checkers = ['csslint']
@@ -32,12 +53,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 "let g:syntastic_javascript_closurecompiler_path = '/home/yo/Downloads/vimFiles/compiler-latest'
 "---------------------------------------------------------
 "---------------------------------------------------------
+
 "let g:necoghc_debug=1
 "command closeBuff bp | sp | bn | bd
 filetype plugin on
 
-au BufEnter *.hs compiler ghc
-let g:ghc = "/usr/local/bin/ghc-7.6.3"
+
+"au BufEnter *.hs compiler ghc
+let g:ghc = "/usr/local/bin/ghc"
 let g:haddock_browser = "/usr/bin/firefox"
 "add ; at the end of the line with only press ctrl+enter like intellij
 :imap <c-cr> <Esc>A;<cr>
@@ -421,6 +444,21 @@ let g:airline_theme="powerlineish"
 "nmap <Leader>a <Plug>(EasyAlign)
 filetype plugin on
 filetype indent on
+
+"Arpeggio inoremap jk <ESC>
+
+" Extend the global default (NOTE: Remove comments in dictionary before sourcing)
+call expand_region#custom_text_objects({
+      \ "\/\\n\\n\<CR>": 1,
+      \ 'a]' :1,
+      \ 'ab' :1,
+      \ 'aB' :1,
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
+
+
+
 
 
 
