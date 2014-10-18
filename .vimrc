@@ -459,7 +459,15 @@ call expand_region#custom_text_objects({
 
 
 
+:call arpeggio#load()
+Arpeggio inoremap as <Esc>
+Arpeggio nnoremap as a
 
+Arpeggio nnoremap sd v
+Arpeggio inoremap sd <Esc>v
+Arpeggio vnoremap as <Esc>
+Arpeggio vnoremap sd <Esc>i
+let g:arpeggio_timeoutlen=60
 
 
 map K <Plug>(expand_region_expand)
