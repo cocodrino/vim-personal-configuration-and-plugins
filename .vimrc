@@ -460,15 +460,30 @@ call expand_region#custom_text_objects({
 
 
 :call arpeggio#load()
-Arpeggio inoremap as <Esc>
-Arpeggio nnoremap as a
+Arpeggio inoremap jk <Esc>
+Arpeggio inoremap kl <Esc>v
 
-Arpeggio nnoremap sd v
-Arpeggio inoremap sd <Esc>v
-Arpeggio vnoremap as <Esc>
-Arpeggio vnoremap sd <Esc>i
-let g:arpeggio_timeoutlen=60
+Arpeggio nnoremap jk a
+Arpeggio nnoremap kl v
 
+Arpeggio vnoremap jk <Esc>
+Arpeggio vnoremap kl <Esc>i
+let g:arpeggio_timeoutlen=20
+
+"replace 'f' with 1-char Sneak
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+"replace 't' with 1-char Sneak
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
 
 map K <Plug>(expand_region_expand)
 "map <S-Enter> <Plug>  (easymotion-prefix)
