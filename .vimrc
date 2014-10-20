@@ -63,8 +63,13 @@ filetype plugin on
 let g:ghc = "/usr/local/bin/ghc"
 let g:haddock_browser = "/usr/bin/firefox"
 "add ; at the end of the line with only press ctrl+enter like intellij
-:imap <c-cr> <Esc>A;<cr>
-:nmap <c-cr> A;<Esc>
+
+:inoremap <s-c-cr> <Esc>A;
+:nnoremap <c-s-cr> A;<Esc>
+:inoremap <c-bs> <c-w>
+:inoremap <c-cr> <Esc>o
+:nnoremap <c-cr> o<Esc>k
+
 ":nmap <c-cr> A;<Esc>
 "usar alt-j para cambiar de modos
 let g:move_key_modifier = 'C'
@@ -430,6 +435,10 @@ let g:airline_enable_syntastic=1
 let g:airline_detect_paste=1
 let g:airline_powerline_fonts=1
 let g:airline_theme="powerlineish"
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+let g:airline_left_alt_sep='   '
+let g:airline_right_alt_sep='   '
 
 :inoremap <c-v> <Esc>v
 :vnoremap <c-S-v> <c-v>
@@ -468,7 +477,7 @@ Arpeggio nnoremap kl v
 
 Arpeggio vnoremap jk <Esc>
 Arpeggio vnoremap kl <Esc>i
-let g:arpeggio_timeoutlen=20
+let g:arpeggio_timeoutlen=5
 
 "replace 'f' with 1-char Sneak
 nmap f <Plug>Sneak_f
@@ -484,6 +493,11 @@ xmap t <Plug>Sneak_t
 xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
+
+set lines=45 columns=83
+
+au InsertLeave * hi Cursor guibg=red
+au InsertEnter * hi Cursor guibg=green
 
 map K <Plug>(expand_region_expand)
 "map <S-Enter> <Plug>  (easymotion-prefix)
