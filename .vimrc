@@ -7,18 +7,17 @@
 "Use the Linux dictionary when spelling is in doubt.
 "Window users can copy the file to their machine.
 
-"set noantialias
+set noantialias
 "Guardar usando Cntrl
 :nmap <c-s> :w<CR>
 :imap <c-s> <Esc>:w<CR>a
 :imap <c-s> <Esc><c-s>
-"setlocal omnifunc=necoghc#omnifunc
+setlocal omnifunc=necoghc#omnifunc
 
 "let $PATH = $PATH . ':' . expand("~/.cabal/bin")
-"let g:ycm_semantic_triggers = {'haskell' : ['.']}
-"let g:necoghc_enable_detailed_browse = 1
-
-
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_enable_detailed_browse = 1
+"let g:necoghc_debug
 " You may already have the following two on, please check
 syntax on
 filetype plugin on
@@ -35,7 +34,7 @@ au BufEnter *.hs compiler ghc
 " :r!which ghc
 
 let g:haddock_browser = "/usr/bin/google-chrome-stable"
-let g:ghc = "/usr/local/bin/ghc"
+let g:ghc = "/usr/local/bin/ghc-7.8.3"
 
 
 "set g:bl_no_mappings
@@ -68,7 +67,7 @@ let g:haddock_browser = "/usr/bin/firefox"
 :nnoremap <c-s-cr> A;<Esc>
 :inoremap <c-bs> <c-w>
 :inoremap <c-cr> <Esc>o
-:nnoremap <c-cr> o<Esc>k
+:nnoremap <c-cr> o<Esc>
 
 ":nmap <c-cr> A;<Esc>
 "usar alt-j para cambiar de modos
@@ -290,7 +289,7 @@ nmap oo o<Esc>k
 
 "set guifont=Source\ Code\ Pro\ 8
 "set guifont=Monaco\ 8.2
-set guifont=Monaco\ 8
+set guifont=MonacoB2\ Bold\ 8.25
 "set guifont=Liberation\ Mono\ 9
 :set linespace=0
 
@@ -431,10 +430,12 @@ endif
 let g:airline_symbols.space = "\ua0"
 " Use airline!!!
 let g:airline_enable_branch=1
-let g:airline_enable_syntastic=1
+let g:airline_enable_syntastic=0
 let g:airline_detect_paste=1
 let g:airline_powerline_fonts=1
-let g:airline_theme="powerlineish"
+"let g:airline_theme="powerlineish"
+let g:airline_theme="luna"
+"let g:airline_theme="sol"
 let g:airline_left_sep=' '
 let g:airline_right_sep=' '
 let g:airline_left_alt_sep='   '
@@ -469,6 +470,7 @@ call expand_region#custom_text_objects({
 
 
 :call arpeggio#load()
+
 Arpeggio inoremap jk <Esc>
 Arpeggio inoremap kl <Esc>v
 
@@ -496,12 +498,29 @@ omap T <Plug>Sneak_T
 
 set lines=45 columns=83
 
-au InsertLeave * hi Cursor guibg=red
-au InsertEnter * hi Cursor guibg=green
+"red
+au InsertLeave * hi Cursor guibg=#dc322f
+"gree
+au InsertEnter * hi Cursor guibg=#268bd2
 
 map K <Plug>(expand_region_expand)
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+
+
+let g:incsearch#magic = '\v'
+"  let g:solarized_termcolors=256
+"  let g:solarized_degrade=1
+"  let g:solarized_bold=1
+
+autocmd Colorscheme * highlight FoldColumn guifg=bg guibg=bg
 "map <S-Enter> <Plug>  (easymotion-prefix)
 map J <Plug>(expand_region_shrink)
+set nowrap
 :imap kk <c-y>
 ":imap ii <Esc>
 "cno ii <c-c>
+"
